@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* header */
+.header{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 0  30px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #333333;
   color: white;
+  height: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.siteName{
+  font-size: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.toSupportPage{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Postcontents */
+.postId{
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 100 100;
+  margin-top: 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 1rem;
+}
+
+.postHead{
+  display: flex;
+  justify-content: space-between;
+  margin:15px 0px;
+  /* padding: 0 20px; */
+}
+.postCreatedAt{
+  margin-left: 10px;
+}
+
+.postCategories {
+  display: flex;
+}
+
+.postCategory {
+  margin-left: 10px;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 2px;
+  color:#0065CC;
+  padding: 5px;
+}
+
+.postTitle{
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.postContent{
+  margin: 15px 0px;
+  padding-right: 20%;
+  overflow: hidden;
+  max-height: 2.4em;
+  line-height: 1.2em;
 }
