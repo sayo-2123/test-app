@@ -6,7 +6,7 @@ export const Lists = () => {
   return (
     <div className="posts">
       {posts.map((post) => (
-        <div key={post.id} className="postId">
+        <div key={post.id} className="postIds">
           <Link
             to={`/article/${post.id}`}
             style={{ textDecoration: "none", color: "inherit" }}

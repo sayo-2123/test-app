@@ -12,9 +12,23 @@ export const Article = () => {
   }
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
+    <div key={post.id} className="postId">
+      <img src={post.thumbnailUrl} alt="Post thumbnail" />
+
+      <div className="postHead">
+        <div className="postCreatedAt">
+          {new Date(post.createdAt).toLocaleDateString("ja-JP")}
+        </div>
+        <div className="postCategories">
+          {post.categories.map((category, index) => (
+            <div key={index} className="postCategory">
+              {category}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="postTitle">{post.title}</div>
+      <div className="post">{post.content}</div>
     </div>
   );
 };
