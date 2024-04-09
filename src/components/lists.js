@@ -1,8 +1,21 @@
-import React from "react";
-import posts from "../data/posts.js";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Lists = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetcher = async () => {
+      const res = await fetch(
+        "https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts"
+      );
+      const data = await res.json();
+      setPosts(data.posts);
+    };
+
+    fetcher();
+  }, []);
+
   return (
     <div className="posts">
       {posts.map((post) => (
