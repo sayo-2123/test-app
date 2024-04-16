@@ -13,17 +13,29 @@ export const Contact = () => {
   // バリデーションルール
   const validate = () => {
     let tempErrors = {};
-    tempErrors.name = formData.name ? "" : "お名前は必須です。";
-    tempErrors.email = formData.email
-      ? /\S+@\S+\.\S+/.test(formData.email)
-        ? ""
-        : "有効なメールアドレスを入力してください。"
-      : "メールアドレスは必須です。";
-    tempErrors.message = formData.message
-      ? formData.message.length <= 500
-        ? ""
-        : "本文は500文字以内で入力してください。"
-      : "本文は必須です。";
+
+    if (!formData.name) {
+      tempErrors.name = "お名前は必須です。";
+    } else {
+      tempErrors.name = "";
+    }
+
+    if (!formData.email) {
+      tempErrors.email = "メールアドレスは必須です。";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      tempErrors.email = "有効なメールアドレスを入力してください";
+    } else {
+      tempErrors.email = "";
+    }
+
+    if (!formData.message) {
+      tempErrors.message = "本文は必須です。";
+    } else if (formData.message.length > 500) {
+      tempErrors.message = "本文は500文字以内で入力してください。";
+    } else {
+      tempErrors.message = "";
+    }
+
     setErrors(tempErrors);
     return Object.values(tempErrors).every((x) => x === "");
   };
