@@ -9,7 +9,14 @@ export const Header = () => {
           Blog
         </Link>
       </div>
-      <div className="toSupportPage">お問い合わせ</div>
+      <div className="toSupportPage">
+        <Link
+          to={`/contact`}
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          お問い合わせ
+        </Link>
+      </div>
     </header>
   );
 };
